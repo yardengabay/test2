@@ -1,0 +1,331 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CABEBF4-88D4-4329-9DC6-B2F9ADC17F3E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Grafitiy</RootNamespace>
+    <AssemblyName>Grafitiy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44326</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Api.Gax, Version=2.7.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.2.7.0\lib\net45\Google.Api.Gax.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Rest, Version=2.7.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.Rest.2.7.0\lib\net45\Google.Api.Gax.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.40.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.40.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.40.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.40.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.40.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.40.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.40.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.40.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.40.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.40.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async, Version=3.2.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.2.0\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Twilio, Version=5.47.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.47.2\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\filter.css" />
+    <Content Include="css\fontawesome-all.min.css" />
+    <Content Include="css\images\cancel.png" />
+    <Content Include="css\images\cancel_%402X.png" />
+    <Content Include="css\images\check.png" />
+    <Content Include="css\images\check_%402X.png" />
+    <Content Include="css\images\focus.png" />
+    <Content Include="css\images\focus_%402X.png" />
+    <Content Include="css\images\layers-2x.png" />
+    <Content Include="css\images\layers.png" />
+    <Content Include="css\images\marker-icon-2x.png" />
+    <Content Include="css\images\marker-icon.png" />
+    <Content Include="css\images\marker-shadow.png" />
+    <Content Include="css\images\measure-control.png" />
+    <Content Include="css\images\rulers.png" />
+    <Content Include="css\images\rulers_%402X.png" />
+    <Content Include="css\images\start.png" />
+    <Content Include="css\images\start_%402X.png" />
+    <Content Include="css\images\throbber.gif" />
+    <Content Include="css\images\trash.png" />
+    <Content Include="css\images\trash_%402X.png" />
+    <Content Include="css\L.Control.Locate.min.css" />
+    <Content Include="css\leaflet-control-geocoder.Geocoder.css" />
+    <Content Include="css\leaflet-measure.css" />
+    <Content Include="css\leaflet-search.css" />
+    <Content Include="css\leaflet.css" />
+    <Content Include="css\MarkerCluster.css" />
+    <Content Include="css\MarkerCluster.Default.css" />
+    <Content Include="css\nouislider.min.css" />
+    <Content Include="css\qgis2web.css" />
+    <Content Include="dataFiles\grafities_1.js" />
+    <Content Include="dataFiles\LegalPlaces_2.js" />
+    <Content Include="dataFiles\yarden.js" />
+    <Content Include="images\1.JPG" />
+    <Content Include="images\10.JPG" />
+    <Content Include="images\11.JPG" />
+    <Content Include="images\12.JPG" />
+    <Content Include="images\13.JPG" />
+    <Content Include="images\14.JPG" />
+    <Content Include="images\15.JPG" />
+    <Content Include="images\16.JPG" />
+    <Content Include="images\17.JPG" />
+    <Content Include="images\18.JPG" />
+    <Content Include="images\19.JPG" />
+    <Content Include="images\2.JPG" />
+    <Content Include="images\20.JPG" />
+    <Content Include="images\21.JPG" />
+    <Content Include="images\22.JPG" />
+    <Content Include="images\23.JPG" />
+    <Content Include="images\24.JPG" />
+    <Content Include="images\25.JPG" />
+    <Content Include="images\26.JPG" />
+    <Content Include="images\27.JPG" />
+    <Content Include="images\28.JPG" />
+    <Content Include="images\29.JPG" />
+    <Content Include="images\3.JPG" />
+    <Content Include="images\30.JPG" />
+    <Content Include="images\31.JPG" />
+    <Content Include="images\32.JPG" />
+    <Content Include="images\33.JPG" />
+    <Content Include="images\34.JPG" />
+    <Content Include="images\35.JPG" />
+    <Content Include="images\36.JPG" />
+    <Content Include="images\37.JPG" />
+    <Content Include="images\38.JPG" />
+    <Content Include="images\39.JPG" />
+    <Content Include="images\4.JPG" />
+    <Content Include="images\40.JPG" />
+    <Content Include="images\41.JPG" />
+    <Content Include="images\42.JPG" />
+    <Content Include="images\43.JPG" />
+    <Content Include="images\44.JPG" />
+    <Content Include="images\45.JPG" />
+    <Content Include="images\46.JPG" />
+    <Content Include="images\47.JPG" />
+    <Content Include="images\48.JPG" />
+    <Content Include="images\49.JPG" />
+    <Content Include="images\5.JPG" />
+    <Content Include="images\50.JPG" />
+    <Content Include="images\51.JPG" />
+    <Content Include="images\52.JPG" />
+    <Content Include="images\53.JPG" />
+    <Content Include="images\54.JPG" />
+    <Content Include="images\55.JPG" />
+    <Content Include="images\56.JPG" />
+    <Content Include="images\6.JPG" />
+    <Content Include="images\7.JPG" />
+    <Content Include="images\8.JPG" />
+    <Content Include="images\9.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_13 Ha-Mekhuga Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_3361_1 3361 Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_3361_2 3361 Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_אברבנאל תל אביב_1 Abarbanel Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_אברבנאל תל אביב_22 Abarbanel Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_אברבנאל תל אביב_35 Abarbanel Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_גאולה תל אביב_42 Ge%27ula Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_הכישור תל אביב_9 Ha-Kishor Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_הלל הזקן תל אביב_14 Hillel ha-Zaken Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_המשור תל אביב_1 Hamasor Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_הנגרים תל אביב_18 HaNagarim Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_חצרים תל אביב_11 Khatserim Tel aviv  num 2.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_חצרים תל אביב_11 Khatserim Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_נחלת בנימין_4 Nahalat Binyamin Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_צריפין תל אביב_1 Tsrifin Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_צריפין תל אביב_22 Tsrifin Tel aviv - Mutagin 2.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_צריפין תל אביב_22 Tsrifin Tel aviv - Mutagin 3.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_צריפין תל אביב_22 Tsrifin Tel aviv - Mutagin.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_צריפין תל אביב_23 Tsrifin Tel aviv.JPG" />
+    <Content Include="images\C__Users_Hadas_Desktop_תמונות גרפיטי תל אביב_צריפין תל אביב_24 Tsrifin Tel aviv.JPG" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\search-icon.png" />
+    <Content Include="js\Autolinker.min.js" />
+    <Content Include="js\L.Control.Locate.min.js" />
+    <Content Include="js\labelgun.min.js" />
+    <Content Include="js\labels.js" />
+    <Content Include="js\leaflet-control-geocoder.Geocoder.js" />
+    <Content Include="js\leaflet-hash.js" />
+    <Content Include="js\leaflet-heat.js" />
+    <Content Include="js\leaflet-measure.js" />
+    <Content Include="js\leaflet-search.js" />
+    <Content Include="js\leaflet-svg-shape-markers.min.js" />
+    <Content Include="js\leaflet-tilelayer-wmts.js" />
+    <Content Include="js\leaflet.js" />
+    <Content Include="js\leaflet.markercluster.js" />
+    <Content Include="js\leaflet.pattern.js" />
+    <Content Include="js\leaflet.rotatedMarker.js" />
+    <Content Include="js\Leaflet.VectorGrid.js" />
+    <Content Include="js\leaflet.wms.js" />
+    <Content Include="js\multi-style-layer.js" />
+    <Content Include="js\nouislider.min.js" />
+    <Content Include="js\OSMBuildings-Leaflet.js" />
+    <Content Include="js\qgis2web_expressions.js" />
+    <Content Include="js\rbush.min.js" />
+    <Content Include="js\tailDT.js" />
+    <Content Include="js\wNumb.js" />
+    <Content Include="legend\grafities_1.png" />
+    <Content Include="legend\ILegalPlaces_2.png" />
+    <Content Include="legend\LegalPlaces_2.png" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\Crs.cs" />
+    <Compile Include="Entity\Geometry.cs" />
+    <Compile Include="Entity\GrafitiesJsonEntity.cs" />
+    <Compile Include="Entity\LegalPlacesEntity.cs" />
+    <Compile Include="Entity\LikesEntity.cs" />
+    <Compile Include="Entity\PropertiesLogin.cs" />
+    <Compile Include="Entity\Result.cs" />
+    <Compile Include="Entity\UserType.cs" />
+    <Compile Include="Entity\yardenType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\User.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\leaflet.js.map" />
+    <Content Include="dataFiles\grafitiesLikes.json" />
+    <Content Include="dataFiles\users.json" />
+    <Content Include="dataFiles\properties.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59885</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44326/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
